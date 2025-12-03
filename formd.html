@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Reservation Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        label, input, select, button {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"], input[type="email"], input[type="date"], select {
+            width: 300px; /* Adjust width to match the visual */
+            padding: 8px;
+            border: 1px solid #ccc;
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        }
+        .checkbox-group label, .radio-group label {
+            display: inline;
+            margin-right: 15px;
+        }
+        .checkbox-group input[type="checkbox"], .radio-group input[type="radio"] {
+            display: inline;
+            width: auto;
+            margin-right: 5px;
+        }
+        .field-group {
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 24px;
+        }
+        .mandatory-note {
+            font-style: italic;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 15px;
+            cursor: pointer;
+            border: 1px solid #777;
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Travel reservation form</h1>
+    <p class="mandatory-note">* denotes mandatory</p>
+
+    <form action="#" method="post">
+        
+        <div class="field-group">
+            <label for="fullname">Full name*:</label>
+            <input type="text" id="fullname" name="fullname" placeholder="FirstName LastName" required>
+        </div>
+
+        <div class="field-group">
+            <label for="email">Email address*:</label>
+            <input type="email" id="email" name="email" placeholder="EMAIL_ADDRESS" required>
+        </div>
+
+        <div class="field-group">
+            <label for="tour-package">Select Tour Package*:</label>
+            <select id="tour-package" name="tour-package" required>
+                <option value="goa">Goa</option>
+                </select>
+        </div>
+
+        <div class="field-group">
+            <label for="arrival-date">Arrival date*:</label>
+            <input type="date" id="arrival-date" name="arrival-date" placeholder="m/d/y" required>
+        </div>
+
+        <div class="field-group">
+            <label for="persons">Number of persons*:</label>
+            <input type="number" id="persons" name="persons" required>
+        </div>
+        
+        <div class="field-group checkbox-group">
+            <p>What would you want to avail?*</p>
+            <label>
+                <input type="checkbox" name="avail[]" value="boarding"> Boarding
+            </label>
+            <label>
+                <input type="checkbox" name="avail[]" value="fooding"> Fooding
+            </label>
+            <label>
+                <input type="checkbox" name="avail[]" value="sightseeing"> Sight seeing
+            </label>
+        </div>
+
+        <div class="field-group">
+            <label for="coupon">Discount Coupon code:</label>
+            <input type="text" id="coupon" name="coupon" placeholder="UNKNOWN_TYPE">
+        </div>
+
+        <div class="field-group radio-group">
+            <p>Terms and conditions*</p>
+            <label>
+                <input type="radio" name="terms" value="agree" required> I agree
+            </label>
+            <label>
+                <input type="radio" name="terms" value="disagree"> I disagree
+            </label>
+        </div>
+        
+        <button type="submit">Complete reservation</button>
+        
+    </form>
+</body>
+</html>
